@@ -22,7 +22,7 @@ namespace DiceBot
         
         public static string[] cCurrencies =new string[] { "btc","doge","ltc","eth","xmr" };
         HttpClientHandler ClientHandlr;
-        HttpClient Client;// = new HttpClient { BaseAddress = new Uri("https://www.999dice.com/api/web.aspx") };
+        HttpClient Client;// = new HttpClient { BaseAddress = new Uri("https://www.999dice.org/api/web.aspx") };
         public dice999(cDiceBot Parent, bool doge999)
         {
             NonceBased = true;
@@ -37,7 +37,7 @@ namespace DiceBot
             if (doge999)
                 BetURL = "https://www.999doge.com/Bets/?b=";
             else
-            BetURL = "https://www.999dice.com/Bets/?b=";
+            BetURL = "https://www.999dice.org/Bets/?b=";
             /*Thread t = new Thread(GetBalanceThread);
             t.Start();*/
             this.Parent = Parent;
@@ -51,7 +51,7 @@ namespace DiceBot
             if (doge999)
                 SiteURL = "https://www.999doge.com/?20073598";
             else
-            SiteURL = "https://www.999dice.com/?20073598";
+            SiteURL = "https://www.999dice.org/?20073598";
         }
 
         protected override void CurrencyChanged()
@@ -427,7 +427,7 @@ namespace DiceBot
         decimal Wagered = 0;
         int site = 0;
         bool thing = false;
-        string[] SiteA = new string[] {"https://www.999dice.com/api/web.aspx" ,
+        string[] SiteA = new string[] {"https://www.999dice.org/api/web.aspx" ,
             "https://www.999proxy.com/api/web.aspx" ,
             "http://super999.ddns.net:999/api/web.aspx" ,
             "https://ru.999dice.com/api/web.aspx" ,
@@ -445,7 +445,7 @@ namespace DiceBot
                 string sitea = SiteA[site];
                 /*switch (site)
                 {
-                    case 0: sitea = "https://www.999dice.com/api/web.aspx"; break;
+                    case 0: sitea = "https://www.999dice.org/api/web.aspx"; break;
                     case 1: sitea = "https://www.999doge.com/api/web.aspx"; break;
                     case 2: sitea = "https://www.999-dice.com/api/web.aspx"; break;
                     case 3: sitea = "http://999again.ddns.net:999/"; break;
@@ -537,7 +537,7 @@ namespace DiceBot
             if (doge999)
                 Client = new HttpClient(ClientHandlr) { BaseAddress = new Uri("https://www.999doge.com/api/web.aspx") };
             else
-                Client = new HttpClient(ClientHandlr) { BaseAddress = new Uri("https://www.999dice.com/api/web.aspx") };
+                Client = new HttpClient(ClientHandlr) { BaseAddress = new Uri("https://www.999dice.org/api/web.aspx") };
             Client.DefaultRequestHeaders.AcceptEncoding.Add(new System.Net.Http.Headers.StringWithQualityHeaderValue("gzip"));
             Client.DefaultRequestHeaders.AcceptEncoding.Add(new System.Net.Http.Headers.StringWithQualityHeaderValue("deflate"));
             List<KeyValuePair<string, string>> pairs = new List<KeyValuePair<string, string>>();
